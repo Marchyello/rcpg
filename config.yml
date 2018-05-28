@@ -1,0 +1,30 @@
+:environment: 'test'
+:grpc:
+  :port: '0.0.0.0:50051'
+  :poll_period: 60
+
+:kafka:
+  :client_id: 'rcpg_kafka_client'
+  :port: 'localhost:9092'
+  :topics:
+    :log: 'RCPG_log'
+    :results: 'RCPG_capture_results'
+
+# All providers must be named exactly as they are in Active Merchant documentation.
+:providers:
+  :PaypalExpressGateway:
+    :test:
+      :credentials:
+        :login: 'rc-bvc-mc_api1.n-fuse.co'
+        :password: '294KBNM82HWCDRY5'
+        :signature: 'AM1aGgn2bz5QbLwfJWgM8rQPCVdfAvB3AYdHMDd6FdwVFGIkULJ0CP47'
+    :production: 
+      ~
+
+  :AuthorizeNetGateway: 
+    :test:
+      :credentials:
+        :login: '3zW7J22WvVuv'
+        :password: '99y4YnN9U7as2PHF'
+    :production:
+      ~
